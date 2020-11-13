@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Feed from '../components/Post_Component/Feed'
+import Feed from '../components/Feed'
 
 const HomeScreen = () => (
     <>
