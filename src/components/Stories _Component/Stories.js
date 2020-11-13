@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList } from 'react-native';
 
 import Story from './Story';
+import styles from './Stories_Style';
 
 const data = [
     {
@@ -30,9 +31,11 @@ const data = [
 
 const Stories = () => (
     <FlatList
+    style={styles.container}
     data={data}
     keyExtractor={({name}) => name}
     horizontal
+    showsHorizontalScrollIndicator={false}
     renderItem={({item}) => <Story imageURL={item.imageURL} name={item.name}/>}
     />
 
