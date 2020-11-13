@@ -6,6 +6,7 @@ import Post from './Post_Component/Post';
 
 const data = [
     {
+        id: '1',
         user: {
             imageURL: 'https://d1u1mce87gyfbn.cloudfront.net/hero/ana/icon-portrait.png',
             name: 'Ana',
@@ -16,6 +17,7 @@ const data = [
         postedAt: '6 minutes ago'
     },
     {
+        id: '2',
         user: {
             imageURL: 'https://d1u1mce87gyfbn.cloudfront.net/hero/mei/icon-portrait.png',
             name: 'Mei',
@@ -26,6 +28,7 @@ const data = [
         postedAt: '13 minutes ago'
     },
     {
+        id: '3',
         user: {
             imageURL: 'https://d1u1mce87gyfbn.cloudfront.net/hero/zarya/icon-portrait.png',
             name: 'Zarya',
@@ -41,6 +44,7 @@ const data = [
 const Feed = () => (
     <FlatList
         data={data}
+        keyExtractor={({id}) => id}
         ListHeaderComponent={Stories}
         renderItem={({item}) => <Post post={item} />}
     />
