@@ -13,7 +13,7 @@ const HomeStack = createStackNavigator();
 const HomeRoutes = () => (
     <HomeStack.Navigator>
       <HomeStack.Screen 
-        name="Home" 
+        name='Home' 
         component={HomeScreen} 
         options={{
           title: 'Instagram',
@@ -24,7 +24,7 @@ const HomeRoutes = () => (
             marginRight: 15,
           },
           headerTitle: () => (
-            <Image source={logo} resizeMode='contain' style={{width: 135}}/>
+            <Image source={logo} resizeMode='contain' style={{width: 135, height: 50}}/>
           ),
           headerLeft: () => (
             <FeatherIcon name='camera' size={25} color={'#000'} />

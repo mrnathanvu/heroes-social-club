@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
-import ProfilePicture from '../Stories _Component/ProfilePicture';
+import ProfilePicture from '../Stories_Component/ProfilePicture';
 import styles from './Header_Style';
 
 
