@@ -1,6 +1,6 @@
 projects:
-  instagramclone:
-    schemaPath: amplify/backend/api/instagramclone/build/schema.graphql
+  instagramclone-dev:
+    schemaPath: graphql/schema.json
     includes:
       - src/graphql/**/*.js
     excludes:
@@ -9,7 +9,10 @@ projects:
       amplify:
         codeGenTarget: javascript
         generatedFileName: ''
-        docsFilePath: /graphql
+        docsFilePath: graphql
+        region: us-west-2
+        apiId: 46why26n7bezldez5gnqv5vucu
+        maxDepth: 2
 extensions:
   amplify:
     version: 3

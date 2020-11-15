@@ -11,15 +11,6 @@ export const createUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -37,15 +28,6 @@ export const updateUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -63,15 +45,6 @@ export const deleteUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -94,9 +67,6 @@ export const createPost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -120,9 +90,6 @@ export const updatePost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -146,9 +113,6 @@ export const deletePost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -170,9 +134,6 @@ export const createStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -194,9 +155,6 @@ export const updateStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -218,9 +176,6 @@ export const deleteStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }

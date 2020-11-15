@@ -1,6 +1,6 @@
 {
   "auth": {
-    "instagramclone08c59502": {
+    "instagramcloneb0984e01": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -17,7 +17,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
-              "description": "IGCloneAPIKey"
+              "description": "IGCloneAPI"
             }
           },
           "additionalAuthenticationProviders": []

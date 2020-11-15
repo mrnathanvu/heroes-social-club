@@ -10,14 +10,14 @@ import Footer from './Footer';
 const Post = ({post}) => (
     <View>
         <Header 
-            imageURL={post.user.imageURL} 
+            imageURL={post.user.image} 
             name={post.user.name}
         />
-        <Body imageURL={post.imgURL}/>
+        <Body imageURL={post.image}/>
         <Footer 
-            likesCount={post.likesCount} 
+            likesCount={post.likes} 
             caption={post.caption} 
-            postedAt={post.postedAt}
+            postedAt={post.createdAt}
         />
     </View>
 

@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "instagramclone08c59502_identitypool_08c59502",
+    "identityPoolName": "instagramcloneb0984e01_identitypool_b0984e01",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "instag08c59502",
-    "userPoolName": "instagramclone08c59502_userpool_08c59502",
+    "resourceNameTruncated": "instagb0984e01",
+    "userPoolName": "instagramcloneb0984e01_userpool_b0984e01",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "instag08c59502_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "instagb0984e01_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "08c59502",
-    "resourceName": "instagramclone08c59502",
+    "sharedId": "b0984e01",
+    "resourceName": "instagramcloneb0984e01",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

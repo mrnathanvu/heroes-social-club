@@ -12,7 +12,7 @@ const UserStoryPreview = (props) => {
         story: {
             user: {
                 id,
-                imageURL,
+                image,
                 name
             }
         }
@@ -26,7 +26,7 @@ const UserStoryPreview = (props) => {
 
     return (
         <TouchableOpacity onPress={onPress}>
-            <ProfilePicture uri={imageURL}/>
+            <ProfilePicture uri={image}/>
             <Text style={styles.name}>{name}</Text>
         </TouchableOpacity>
     )

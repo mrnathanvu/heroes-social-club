@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ImageBackground, ActivityIndicator, TouchableWithoutFeedback, Dimensions, Text, View } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-gesture-handler';
+import { API, graphqlOperation } from 'aws-amplify';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
@@ -9,38 +10,51 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import storiesData from '../assets/data/data';
 import styles from './StoryScreen_Style';
 import ProfilePicture from '../components/Stories_Component/ProfilePicture';
+import { listStorys } from '../../graphql/queries.js';
 
 const StoryScreen = () => {
 
-    const [userStories, setUserStories] = useState(null);
+    // const [userStories, setUserStories] = useState(null);
     const [activeStoryIndex, setActiveStoryIndex] = useState(null);
+    const [stories, setStories] = useState([]);
 
     const route = useRoute();
     // console.log('ROUTE', route)
-    const userId = route.params.userId;
+    // const userId = route.params.userId;
     // console.log('userId', userId);
 
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
 
     useEffect(() => {
         // console.log(`activeStoryIndex${activeStoryIndex}`)
-        const userStories = storiesData.find(storyData => storyData.user.id === userId);
+        fetchStories();
+        // const userStories = storiesData.find(storyData => storyData.user.id === userId);
         // console.log('userStories', userStories);
-        setUserStories(userStories);
+        // setUserStories(userStories);
         setActiveStoryIndex(0);
     },[])
 
-    const navigateToNextUser = () => {
-        navigation.push('Story', { userId: (parseInt(userId) + 1).toString() });
+    const fetchStories = async () => {
+        try {
+            const storiesData = await API.graphql(graphqlOperation(listStorys));
+            // console.log('storiesData', storiesData);
+            setStories(storiesData.data.listStorys.items);
+        } catch (err) {
+            console.log('ERROR', err.message);
+        }
     }
 
-    const navigateToPrevUser = () => {
-        navigation.push('Story', { userId: (parseInt(userId) - 1).toString() });
-    }
+    // const navigateToNextUser = () => {
+    //     navigation.push('Story', { userId: (parseInt(userId) + 1).toString() });
+    // }
+
+    // const navigateToPrevUser = () => {
+    //     navigation.push('Story', { userId: (parseInt(userId) - 1).toString() });
+    // }
 
     const handleNextStory = () => {
-        if (activeStoryIndex >= userStories.stories.length - 1) {
-            navigateToNextUser();
+        if (activeStoryIndex >= stories.length - 1) {
+            // navigateToNextUser();
             return;
         }
         setActiveStoryIndex(activeStoryIndex + 1);
@@ -48,7 +62,7 @@ const StoryScreen = () => {
 
     const handlePrevStory = () => {
         if (activeStoryIndex <= 0) {
-            navigateToPrevUser();
+            // navigateToPrevUser();
             return;
         }
         setActiveStoryIndex(activeStoryIndex - 1);
@@ -73,7 +87,7 @@ const StoryScreen = () => {
         
     }
 
-    if(!userStories) {
+    if(!stories || stories.length === 0) {
         return (
             <SafeAreaView> 
                 <ActivityIndicator />
@@ -82,18 +96,20 @@ const StoryScreen = () => {
     }
     // console.log('userStories', userStories)
 
-    const activeStory = userStories.stories[activeStoryIndex];
+    // const activeStory = userStories.stories[activeStoryIndex];
     // console.log('activeStory', activeStory)
+
+    const activeStory = stories[activeStoryIndex];
 
     // console.log('RENDERING')
     return (
         <SafeAreaView style={styles.container}> 
             <TouchableWithoutFeedback onPress={handlePress}>
-                <ImageBackground source={{uri: activeStory.imageURL}} style={styles.image}>
+                <ImageBackground source={{uri: activeStory.image}} style={styles.image}>
                     <View style={styles.userInfo}>
-                        <ProfilePicture uri={userStories.user.imageURL} size={50} />
-                        <Text style={styles.userName}>{userStories.user.name}</Text>
-                        <Text style={styles.postedTime}>{activeStory.postedTime}</Text>
+                        <ProfilePicture uri={activeStory.user.image} size={50} />
+                        <Text style={styles.userName}>{activeStory.user.name}</Text>
+                        <Text style={styles.postedTime}>{activeStory.createdAt}</Text>
                     </View>
                     <View style={styles.bottomContainer}>
                         <View style={styles.cameraButton}>

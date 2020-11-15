@@ -8,15 +8,6 @@ export const onCreateUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -31,15 +22,6 @@ export const onUpdateUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -54,15 +36,6 @@ export const onDeleteUser = /* GraphQL */ `
       name
       image
       posts {
-        items {
-          id
-          caption
-          image
-          userID
-          likes
-          createdAt
-          updatedAt
-        }
         nextToken
       }
       createdAt
@@ -82,9 +55,6 @@ export const onCreatePost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -105,9 +75,6 @@ export const onUpdatePost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -128,9 +95,6 @@ export const onDeletePost = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -149,9 +113,6 @@ export const onCreateStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -170,9 +131,6 @@ export const onUpdateStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -191,9 +149,6 @@ export const onDeleteStory = /* GraphQL */ `
         id
         name
         image
-        posts {
-          nextToken
-        }
         createdAt
         updatedAt
       }
