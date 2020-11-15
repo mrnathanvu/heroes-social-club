@@ -10,6 +10,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+import { withAuthenticator } from 'aws-amplify-react-native'
 
 import Router from './src/router/Router';
 
@@ -22,4 +23,4 @@ const App: () => React$Node = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);

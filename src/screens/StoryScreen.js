@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ImageBackground, ActivityIndicator, TouchableWithoutFeedback, Dimensions, Text, View } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { TextInput } from 'react-native-gesture-handler';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
@@ -8,26 +9,25 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import storiesData from '../assets/data/data';
 import styles from './StoryScreen_Style';
 import ProfilePicture from '../components/Stories_Component/ProfilePicture';
-import { TextInput } from 'react-native-gesture-handler';
 
 const StoryScreen = () => {
 
     const [userStories, setUserStories] = useState(null);
     const [activeStoryIndex, setActiveStoryIndex] = useState(null);
 
-    const navigation = useNavigation();
-
     const route = useRoute();
     // console.log('ROUTE', route)
     const userId = route.params.userId;
     // console.log('userId', userId);
+
+    const navigation = useNavigation();
 
     useEffect(() => {
         // console.log(`activeStoryIndex${activeStoryIndex}`)
         const userStories = storiesData.find(storyData => storyData.user.id === userId);
         // console.log('userStories', userStories);
         setUserStories(userStories);
-        setActiveStoryIndex(0)
+        setActiveStoryIndex(0);
     },[])
 
     const navigateToNextUser = () => {
