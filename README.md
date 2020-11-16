@@ -1,4 +1,4 @@
-# Instagram Clone
+# Heroes Social Media App
 
 An emulated demo of the home screen with posts and stories
 
