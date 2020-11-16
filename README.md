@@ -1,6 +1,6 @@
 # Heroes Social Media App
 
-An emulated demo of the home screen with posts and stories
+An emulated demo of a home screen with users’ stories and posts
 
 ## Preview
 
