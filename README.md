@@ -1,6 +1,7 @@
-# Heroes Social Media App
+# Heroes Social Club
 
-An emulated demo of a home screen with users’ stories and posts
+- A demo of a social media mobile app that pulls data from AWS DynamoDB to render on a home screen.
+- Users can interact by swiping, tapping, and liking images posted by their favorite heroes along with stories.
 
 ## Preview
 
@@ -9,9 +10,10 @@ An emulated demo of a home screen with users’ stories and posts
 ## Build With
 
 - [Javascript]()
-- [React](https://reactjs.org/)
+- [React.js](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [React Navigation](https://reactnavigation.org/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
 
 ## Installation
 
