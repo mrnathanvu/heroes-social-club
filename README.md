@@ -1,7 +1,8 @@
 # Heroes Social Club
 
-- A demo of a social media mobile app that pulls data from AWS DynamoDB to render on a home screen.
-- Users can interact by swiping, tapping, and liking images posted by their favorite heroes along with stories.
+- A social media mobile app that uses Amazon Web Services GraphQL to query and manipulate data with AWS DynamoDB, using StyleSheet to render the home screen with images.
+
+- Created a UI with gestures and animations for navigating on Android and iOS, transitioning between screens and navigating routes in the stack using React Navigation.
 
 ## Preview
 
@@ -18,6 +19,7 @@
 ## Installation
 
 ```
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install node
 brew install watchman
